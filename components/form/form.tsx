@@ -12,15 +12,18 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import SelectCategory from "../selectCategory/selectCategory";
 
 import { useState } from "react";
-import { recaptchaTokenVerification } from "@/app/services/authServices";
+import { recaptchaTokenVerification } from "@/services/authServices";
+import { addOrder } from "@/services/postOrder";
+import { TOrderInfo } from "../interface/orderType";
+import Swal from "sweetalert2";
 
 
 const FormData = () => {
-  const form = useForm() ;
+  const form = useForm<TOrderInfo>() ;
 
   const [recaptcha,setRecaptcha]=useState(false)
 
@@ -29,11 +32,23 @@ const FormData = () => {
   } = form ;
 
 
-  const onSubmit=(data)=>{
+  const onSubmit:SubmitHandler<TOrderInfo>=async(data:TOrderInfo)=>{
       try {
-         
+         const result= await addOrder(data) ;
+         if(result.data.acknowledged){
+           Swal.fire({
+               title: result.message,
+               icon: "success",
+               draggable: true
+});
+         }
+         form.reset();
       } catch (error) {
-        
+           Swal.fire({
+             title: "Oops...",
+             text: "Something went wrong!",
+             icon: "error",
+});
       }
   } ; 
 
@@ -54,6 +69,7 @@ const FormData = () => {
 
 
     return (
+      
        <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
         <FormField
@@ -78,7 +94,7 @@ const FormData = () => {
             <FormItem>
               <FormLabel>Your Email</FormLabel>
               <FormControl>
-                <Input placeholder="give your valid email" {...field} />
+                <Input type="email" placeholder="give your valid email" {...field} />
               </FormControl>
               
               <FormMessage />

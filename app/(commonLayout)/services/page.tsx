@@ -1,9 +1,15 @@
-import React from 'react';
+import Services from "@/components/services/services";
+import { Metadata } from "next";
+
+ export const metadata: Metadata = {
+  title: 'MTS/services',
+  description: 'Explore MTS Tech’s professional services, including web development, software solutions, UI/UX design, and digital support for growing businesses',
+}
 
 const ServicePage = () => {
     return (
         <div>
-            <h1>this is service page</h1>
+            <Services/>
         </div>
     );
 };
