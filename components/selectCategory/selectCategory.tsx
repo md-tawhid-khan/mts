@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Select,
   SelectContent,
@@ -7,8 +8,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { ControllerRenderProps } from "react-hook-form";
 
-const SelectCategory = ({field}) => {
+const SelectCategory = ({field}:{field: ControllerRenderProps<any, string>}) => {
     return (
           <Select onValueChange={field.onChange}
           defaultValue={field.value}

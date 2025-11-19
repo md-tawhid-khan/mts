@@ -20,10 +20,13 @@ import { recaptchaTokenVerification } from "@/services/authServices";
 import { addOrder } from "@/services/postOrder";
 import { TOrderInfo } from "../interface/orderType";
 import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 
 
 const FormData = () => {
   const form = useForm<TOrderInfo>() ;
+  const router=useRouter()
+  
 
   const [recaptcha,setRecaptcha]=useState(false)
 
@@ -36,6 +39,8 @@ const FormData = () => {
       try {
          const result= await addOrder(data) ;
          if(result.data.acknowledged){
+          form.reset();
+          router.push('/') ;
            Swal.fire({
                title: result.message,
                icon: "success",
