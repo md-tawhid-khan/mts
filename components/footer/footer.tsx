@@ -14,7 +14,7 @@ const Footer = () => {
             <Link href={"https://web.facebook.com/mdtawhidkhan.khan.7"}><Facebook /></Link>
          <Link href={"https://web.facebook.com/mdtawhidkhan.khan.7"}><X/></Link>
          <Link href={"https://web.facebook.com/mdtawhidkhan.khan.7"}><Instagram/></Link>
-         <Link href={"https://www.linkedin.com/in/tawhid-khan-khan-a993b617b"}><Linkedin/></Link>
+         <Link href={"https://www.linkedin.com/in/md-touhed-sorker-a993b617b"}><Linkedin/></Link>
          </div>
         </div>
     );
