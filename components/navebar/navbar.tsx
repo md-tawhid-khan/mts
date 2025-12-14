@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-gray-700 font-medium">
+        <ul className="hidden sm:hidden md:flex space-x-8 text-gray-700 font-medium">
           <Link href={'/'} className={currentPath==='/'?"text-blue-600":"hover:text-blue-600 cursor-pointer"}>Home</Link>
           <Link href={'/about'} className={currentPath==='/about'?"text-blue-600":"hover:text-blue-600 cursor-pointer"}>About</Link>
           <Link href={'/services'} className={currentPath==='/services'?"text-blue-600":"hover:text-blue-600 cursor-pointer"}>Our Service</Link>
@@ -39,35 +39,40 @@ const Navbar = () => {
         
      
 
-        {open && <div className="md:hidden bg-white shadow-md px-6 pb-4 space-y-4 text-gray-700 font-medium space-x-5">
-           <Link
+        {
+           open && <div className= "md:hidden bg-white shadow-md px-4 py-3">
+            <div className='flex items-center justify-between gap-4 text-gray-700 font-medium text-sm'>
+                  <Link
             href="/"
             onClick={() => setOpen(false)}
-            className={currentPath === "/" ? "text-blue-600" : ""}
+            className={currentPath === "/" ? "text-blue-600 font-semibold" : ""}
           >
             Home
           </Link>
           <Link
             href="/about"
             onClick={() => setOpen(false)}
-            className={currentPath === "/about" ? "text-blue-600" : ""}
+            className={currentPath === "/about" ? "text-blue-600 font-semibold" : ""}
           >
             About
           </Link>
           <Link
             href="/services"
             onClick={() => setOpen(false)}
-            className={currentPath === "/services" ? "text-blue-600" : ""}
+            className={currentPath === "/services" ? "text-blue-600 font-semibold" : ""}
           >
             Our Service
           </Link>
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className={currentPath === "/contact" ? "text-blue-600" : ""}
+            className={currentPath === "/contact" ? "text-blue-600 font-semibold" : ""}
           >
             Contact Us
           </Link>
+
+            </div>
+          
           </div>
         
         }
