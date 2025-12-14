@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <div className='flex flex-col gap-5 items-center justify-center py-24 bg-amber-50'>
+        <div className='flex flex-col gap-5 items-center justify-center p-24 bg-amber-50'>
              {/* Company Name */}
         <Link href={'/'} className="text-2xl font-bold text-blue-400 cursor-pointer">
          <span className="text-blue-800">M</span><span className="text-blue-700">T</span><span className="text-blue-600">S</span>-<span>TECH</span>

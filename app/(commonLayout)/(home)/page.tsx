@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './home.module.css'
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -29,7 +30,48 @@ We are a team of passionate  developers and designers dedicated to delivering  w
         
      </section>
 
-     
+
+      <section className='my-10 p-7'>
+           <div >
+            <h1 className='text-4xl my-6 font-semibold'>Experience Our Solutions</h1>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6'>
+              <Link href={"https://next-mart-frontend.vercel.app/"}>
+              <div className='border-4 bg-amber-100 flex flex-col items-center justify-center p-2'>
+               <h1 className='my-2'>e-comerce site </h1>
+               <Image src='/commerce.jpg' alt="No image" height={120} width={120}  />
+            </div>
+              </Link>
+              <Link href={"https://next-mart-frontend.vercel.app/"}>
+              <div className='border-4 bg-amber-100 flex flex-col items-center justify-center p-2'>
+               <h1 className='my-2'>e-comerce site </h1>
+               <Image src='/commerce.jpg' alt="No image" height={120} width={120}  />
+            </div>
+              </Link>
+              <Link href={"https://next-mart-frontend.vercel.app/"}>
+              <div className='border-4 bg-amber-100 flex flex-col items-center justify-center p-2'>
+               <h1 className='my-2'>e-comerce site </h1>
+               <Image src='/commerce.jpg' alt="No image" height={120} width={120}  />
+            </div>
+              </Link>
+              <Link href={"https://next-mart-frontend.vercel.app/"}>
+              <div className='border-4 bg-amber-100 flex flex-col items-center justify-center p-2'>
+               <h1 className='my-2'>e-comerce site </h1>
+               <Image src='/commerce.jpg' alt="No image" height={120} width={120}  />
+            </div>
+              </Link>
+              <Link href={"https://next-mart-frontend.vercel.app/"}>
+              <div className='border-4 bg-amber-100 flex flex-col items-center justify-center p-2'>
+               <h1 className='my-2'>e-comerce site </h1>
+               <Image src='/commerce.jpg' alt="No image" height={120} width={120}  />
+            </div>
+              </Link>
+                
+             
+                
+            </div>
+            
+           </div>
+        </section>     
         
    
    </div>
